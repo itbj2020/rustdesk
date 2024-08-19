@@ -114,7 +114,10 @@ Future<void> initEnv(String appType) async {
   _registerEventHandler();
   // Update the system theme.
   updateSystemWindowTheme();
-  bind.mainSetPermanentPassword(password: "Xn52hEWDn");
+  String permanentPassword = Platform.environment['PERMANENT_PASSWORD'] ?? '';
+  if (permanentPassword.isNotEmpty) {
+    bind.mainSetPermanentPassword(password: permanentPassword);
+  }
 }
 
 void runMainApp(bool startService) async {
