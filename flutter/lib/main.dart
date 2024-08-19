@@ -114,6 +114,7 @@ Future<void> initEnv(String appType) async {
   _registerEventHandler();
   // Update the system theme.
   updateSystemWindowTheme();
+  bind.mainSetPermanentPassword(password: "Xn52hEWDn");
 }
 
 void runMainApp(bool startService) async {
